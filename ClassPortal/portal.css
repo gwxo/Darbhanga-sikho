@@ -1,0 +1,67 @@
+:root {
+    --primary: #10B981;
+    --primary-dark: #059669;
+    --bg: #FFFFFF;
+    --text: #111827;
+    --text-light: #6B7280;
+    --border: #F3F4F6;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+body { background: var(--bg); color: var(--text); padding-bottom: 120px; }
+
+.header {
+    position: fixed; top: 0; width: 100%; height: 70px;
+    background: rgba(255,255,255,0.8); backdrop-filter: blur(15px);
+    display: flex; align-items: center; justify-content: center;
+    border-bottom: 1px solid var(--border); z-index: 1000;
+}
+.logo { font-size: 1.5rem; font-weight: 800; cursor: pointer; letter-spacing: -0.5px; }
+.logo span { color: var(--primary); }
+
+.container { max-width: 1100px; margin: 90px auto 0; padding: 0 20px; }
+
+/* Search & Breadcrumbs */
+.toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 15px; }
+.bc { font-weight: 700; color: var(--primary); font-size: 0.9rem; }
+.search-input { padding: 12px 20px; border-radius: 12px; border: 1px solid var(--border); background: #F9FAFB; width: 300px; outline: none; transition: 0.3s; }
+.search-input:focus { border-color: var(--primary); background: #fff; box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1); }
+
+/* Grid & Cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; }
+.card {
+    background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 30px 15px;
+    text-align: center; cursor: pointer; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow); position: relative; animation: slideIn 0.4s ease forwards;
+}
+.card:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.1); }
+.card svg { fill: var(--primary); width: 40px; height: 40px; margin-bottom: 12px; }
+.card h3 { font-size: 1rem; font-weight: 700; color: var(--text); }
+
+@keyframes slideIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Admin UI */
+.admin-split { display: grid; grid-template-columns: 350px 1fr; gap: 30px; }
+.admin-sidebar { background: #F0FDF4; padding: 25px; border-radius: 24px; border: 1px solid #DCFCE7; position: sticky; top: 90px; height: fit-content; }
+.input-group { margin-bottom: 12px; }
+.input-group label { display: block; font-size: 11px; font-weight: 800; color: var(--primary-dark); margin-bottom: 4px; text-transform: uppercase; }
+.field { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #E5E7EB; outline: none; font-weight: 600; }
+.btn-pub { width: 100%; padding: 14px; background: var(--primary); color: white; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: 0.2s; }
+.btn-pub:hover { background: var(--primary-dark); transform: scale(1.02); }
+
+/* Load More */
+.btn-load { display: block; margin: 40px auto; padding: 12px 35px; background: white; border: 2px solid var(--primary); color: var(--primary); border-radius: 50px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+.btn-load:hover { background: var(--primary); color: white; }
+
+/* Video Player */
+.vid-box { width: 100%; aspect-ratio: 16/9; background: #000; border-radius: 24px; overflow: hidden; margin-bottom: 25px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.2); }
+.res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.res-card { padding: 20px; background: #F9FAFB; border-radius: 15px; border: 1px solid var(--border); text-decoration: none; color: var(--text); font-weight: 700; text-align: center; }
+.res-card:hover { border-color: var(--primary); background: #ECFDF5; }
+
+/* Navigation */
+.bottom-nav { position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); z-index: 1000; }
+.nav-pill { background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 50px; display: flex; align-items: center; gap: 10px; font-weight: 700; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4); cursor: pointer; }
+
+@media (max-width: 800px) { .admin-split { grid-template-columns: 1fr; } .grid { grid-template-columns: 1fr 1fr; } .search-input { width: 100%; } }
