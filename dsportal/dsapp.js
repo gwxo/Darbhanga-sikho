@@ -8,7 +8,7 @@ const firebaseConfig = {
   appId: "1:155511913539:web:4de93e87e6fce0150d28f6"
 };
 
-const ADMIN_UID = "PASTE_YOUR_UID_HERE"; // From Firebase Auth Tab
+const ADMIN_UID = "8tnLMzCLXkYw6w2vXDOSM4iO0f82"; // From Firebase Auth Tab
 
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
