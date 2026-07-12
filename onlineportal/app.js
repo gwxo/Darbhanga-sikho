@@ -1,11 +1,11 @@
 // --- CONFIGURATION ---
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "your-app.firebaseapp.com",
-    projectId: "your-app",
-    storageBucket: "your-app.appspot.com",
-    messagingSenderId: "...",
-    appId: "..."
+  apiKey: "AIzaSyBodqKo6sKRvarwf9jrVNHk0DHZJqQRsSg",
+  authDomain: "eng4speak.firebaseapp.com",
+  projectId: "eng4speak",
+  storageBucket: "eng4speak.firebasestorage.app",
+  messagingSenderId: "155511913539",
+  appId: "1:155511913539:web:4de93e87e6fce0150d28f6"
 };
 
 firebase.initializeApp(firebaseConfig);
